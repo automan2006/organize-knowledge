@@ -1,0 +1,7 @@
+{
+  "interface": {
+    "display_name": "保存 Notion 课程笔记",
+    "short_description": "将聊天知识与图片按学术长文字模板归档至对应的现有课程页面",
+    "default_prompt": "使用 $notion-course-notes，整理当前聊天的学习知识。"
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660">
+<rect width="1000" height="660" rx="20" fill="#fafbfe"/>
+<g font-family="sans-serif" fill="#24344c">
+<text x="30" y="45" font-size="27" font-weight="bold">Organize knowledge · 课程笔记布局</text>
+<text x="30" y="76" font-size="16" fill="#64748b">结构示意 · 内容可扩展 · 手机顺序阅读</text>
+<rect x="25" y="100" width="150" height="360" rx="12" fill="#e7f5ed"/>
+<text x="40" y="135" font-size="19" font-weight="bold">本页目录</text>
+<text x="40" y="177" font-size="16">基本概念</text><text x="40" y="210" font-size="16">核心原理</text><text x="40" y="243" font-size="16">分类与方法</text><text x="40" y="276" font-size="16">例题与复习</text><text x="40" y="331" font-size="16">相关笔记</text>
+<rect x="190" y="100" width="490" height="360" rx="12" fill="#eaf2ff"/>
+<text x="210" y="135" font-size="22" font-weight="bold">完整知识正文</text>
+<text x="210" y="180" font-size="18">定义与条件、符号与单位</text><text x="210" y="220" font-size="18">原理解释、公式推导、操作步骤</text><text x="210" y="260" font-size="18">保留追问、纠错和完整例题</text><text x="210" y="315" font-size="17">长公式按宽度选择字号，必要时分行</text><text x="210" y="355" font-size="17">计算、结果、判断分别换段</text>
+<rect x="695" y="100" width="280" height="100" rx="12" fill="#fff3d9"/><text x="715" y="139" font-size="21" font-weight="bold">本节重点</text><text x="715" y="176" font-size="17">学习目标与复习问题</text>
+<rect x="695" y="215" width="280" height="115" rx="12" fill="#fbe7f0"/><text x="715" y="252" font-size="21" font-weight="bold">关键公式</text><text x="715" y="296" font-size="18">可编辑原生数学块</text>
+<rect x="695" y="345" width="280" height="115" rx="12" fill="#eaf2ff"/><text x="715" y="382" font-size="21" font-weight="bold">图片与图解</text><text x="715" y="423" font-size="17">原图、图注与用途</text>
+<rect x="25" y="480" width="570" height="150" rx="12" fill="#eaf2ff"/><text x="45" y="520" font-size="22" font-weight="bold">例题解析</text><text x="45" y="560" font-size="17">条件 → 代入 → 计算结果 → 判断 → 最终取值</text><text x="45" y="598" font-size="17">需要时继续展开，不删减推导</text>
+<rect x="610" y="480" width="365" height="150" rx="12" fill="#fce9e9"/><text x="630" y="520" font-size="22" font-weight="bold">总结与易错点</text><text x="630" y="560" font-size="17">原误区、正确理解、原因</text><text x="630" y="598" font-size="17">保留未解决的问题</text>
+</g></svg>

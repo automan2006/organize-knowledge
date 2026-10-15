@@ -1,0 +1,10 @@
+{
+  "name": "organize-knowledge-community",
+  "interface": {"displayName": "Organize knowledge"},
+  "plugins": [{
+    "name": "organize-knowledge",
+    "source": {"source": "local", "path": "./plugins/organize-knowledge"},
+    "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+    "category": "Productivity"
+  }]
+}

@@ -1,0 +1,27 @@
+{
+  "interface": {
+    "displayName": "Organize knowledge",
+    "shortDescription": "聊天知识归档、图片保存与 Obsidian 概念笔记",
+    "longDescription": "把当前可读取的学习聊天整理成完整 Notion 课程笔记和独立 Obsidian 概念笔记；支持可访问图片归档、分步计算和手机公式排版。使用者需自行连接 Notion 并指定自己的归档位置。",
+    "developerName": "automan2006",
+    "category": "Productivity",
+    "capabilities": [],
+    "logo": "./assets/book.svg",
+    "composerIcon": "./assets/book.svg",
+    "defaultPrompt": [
+      "使用 $study-chat-notes，整理当前整条聊天的全部学习知识和图片，自动存入对应 Notion 课程，并给我可复制的 Obsidian 概念笔记。",
+      "使用 $notion-course-notes，将当前聊天完整整理成课程学术笔记，包含图片并自动保存到 Notion。",
+      "使用 $obsidian-concept-notes，将当前聊天整理为可复制的 Obsidian 概念笔记，附别名和候选关联。"
+    ]
+  },
+  "name": "organize-knowledge",
+  "version": "0.1.4",
+  "description": "Organize chat knowledge into complete Notion course notes and reusable Obsidian Markdown, with image archiving and mobile-friendly formulas.",
+  "author": {
+    "name": "automan2006"
+  },
+  "keywords": [],
+  "skills": "./skills",
+  "license": "MIT",
+  "repository": "https://github.com/automan2006/organize-knowledge"
+}
