@@ -15,7 +15,7 @@
     ]
   },
   "name": "organize-knowledge",
-  "version": "0.1.4",
+  "version": "0.1.12",
   "description": "Organize chat knowledge into complete Notion course notes and reusable Obsidian Markdown, with image archiving and mobile-friendly formulas.",
   "author": {
     "name": "automan2006"

@@ -1,7 +1,7 @@
 {
   "interface": {
     "display_name": "导出 Obsidian 概念笔记",
-    "short_description": "输出可复制的独立概念笔记及别名和候选关系，方便后续插件链接",
+    "short_description": "生成完整 Markdown 供 GitHub 归档或聊天导出，保留 YAML 公式与候选关联",
     "default_prompt": "使用 $obsidian-concept-notes，整理当前聊天的学习知识。"
   }
 }

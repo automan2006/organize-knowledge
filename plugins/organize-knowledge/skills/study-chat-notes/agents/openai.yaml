@@ -1,7 +1,7 @@
 {
   "interface": {
     "display_name": "整理整条学习聊天",
-    "short_description": "全面整理聊天知识和图片，自动归档课程并生成两种独立学习笔记",
+    "short_description": "默认同时保存 Notion 与 GitHub，用户明确限定时只做指定目标或部分笔记",
     "default_prompt": "使用 $study-chat-notes，整理当前聊天的学习知识。"
   }
 }
