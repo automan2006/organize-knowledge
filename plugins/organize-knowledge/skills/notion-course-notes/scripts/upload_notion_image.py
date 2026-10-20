@@ -43,7 +43,7 @@ def build_request(image_path, prepared):
         raise UploadError("Expected the file multipart field.")
     content_type = prepared.get("content_type") or mimetypes.guess_type(image_path.name)[0]
     allowed = {"image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml",
-               "image/heic", "image/heif", "image/tiff", "image/bmp"}
+               "image/heic", "image/heif", "image/tiff", "image/bmp", "application/pdf"}
     if content_type not in allowed:
         raise UploadError("Expected a supported image MIME type.")
     headers = dict(prepared.get("upload_headers", {}))

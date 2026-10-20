@@ -1,9 +1,14 @@
 ---
 {
   "name": "obsidian-concept-notes",
-  "description": "生成保留 YAML、公式和候选关联的 Obsidian Markdown，供默认 GitHub 归档使用或按要求在聊天中导出，支持用户限定目标与笔记范围。"
+  "description": "按课堂、知识和书籍分类生成 Obsidian Markdown，保留 YAML、公式和 related_candidates，去重后归档 GitHub 私库及图片/PDF 原件。"
 }
 ---
+
+## 0.2.0 材料分类与精简边界
+
+先执行 [图片、PDF 与三类资料规则](../study-chat-notes/references/material-intake.md)；该规则优先于本文及旧引用中泛指“所有内容/所有科目全文保留、默认课程”的要求：课堂仅限本学期；课外知识另存知识；读书笔记按主题和书籍归类，读书聊天与书籍同目录，只有读书聊天允许精简。课堂、知识和原读书笔记继续完整保留。图片/PDF 逐页识别并保留原件，默认去重后同时保存 Notion 和 GitHub，重复不再写入。仅更新插件不创建学习档案。
+
 
 # Obsidian 概念笔记导出
 

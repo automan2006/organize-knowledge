@@ -60,3 +60,11 @@
 ```
 
 `existing_path` 仅在实时读取仓库确认已有目录后填写；新分类省略它。程序将同一课程 ID 的各篇放在同一目录、支持复用旧目录，并阻止路径与分类不一致；它不查询 Notion、不做语义判断，也不修改 YAML 或搬移旧文件。无终端时，按同样规则选择路径，再用 GitHub 创建文件工具归档。
+
+
+## 0.2.0 分类字段扩展
+
+兼容原 course/domain 和显式 path。新课外笔记使用
+`classification: {"kind":"knowledge","name":"领域名","course_status":"no_match"}`；
+读书使用 `{"kind":"reading","name":"主题","book":"已核实书名（必要时含作者或版本）","book_status":"verified","course_status":"no_match"}`。
+默认路由到知识/领域及读书笔记/主题/书籍。existing_path 仅能使用实际查证的同类目录；新课外材料不得复用课程目录。filename 是单个 Markdown 文件名。课程仍需真实 notion_course_id，并由代理确认本学期课堂身份；脚本不替代语义判断。

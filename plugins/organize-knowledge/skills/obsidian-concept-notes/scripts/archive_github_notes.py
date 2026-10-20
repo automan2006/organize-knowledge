@@ -120,7 +120,7 @@ def resolve_note_paths(entries):
             continue
         kind = category.get('kind')
         name = category.get('name', '').strip()
-        if kind not in {'course', 'domain'} or not name:
+        if kind not in {'course', 'domain', 'knowledge', 'reading'} or not name:
             raise ArchiveError('Expected a verified course or domain classification')
         if kind == 'course':
             course_id = category.get('notion_course_id', '').strip().replace('-', '').lower()
@@ -130,12 +130,20 @@ def resolve_note_paths(entries):
         else:
             if category.get('course_status') != 'no_match':
                 raise ArchiveError('Do not create a domain when course matching is unverified')
-            key = ('domain', unicodedata.normalize('NFKC', name).casefold())
+            identity = unicodedata.normalize('NFKC', name).casefold()
+            if kind == 'reading':
+                book = category.get('book', '').strip()
+                if not book or category.get('book_status') != 'verified':
+                    raise ArchiveError('Reading routing requires a verified book identity')
+                identity += '\0' + unicodedata.normalize('NFKC', book).casefold()
+            key = (kind, identity)
         existing = category.get('existing_path')
         if existing is not None:
             validate_path(existing + '/category-check.md')
             if PurePosixPath(existing).parts[0] in {'_tests', '待分类'}:
                 raise ArchiveError('A test/pending folder is not a confirmed category')
+            if kind in {'knowledge', 'reading'} and PurePosixPath(existing).parts[0] == '课程':
+                raise ArchiveError('Extracurricular material cannot enter course folders')
             if key in known_paths and known_paths[key] != existing:
                 raise ArchiveError('One course/domain maps to conflicting existing folders')
             folded = existing.casefold()
@@ -158,7 +166,14 @@ def resolve_note_paths(entries):
                 raise ArchiveError('Classification name cannot form a folder')
             if re.match(r'^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)', leaf, re.I):
                 leaf = '笔记-' + leaf
-            folder = ('课程/' if key[0] == 'course' else '领域/') + leaf
+            folder = {'course': '课程/', 'domain': '领域/',
+                      'knowledge': '知识/', 'reading': '读书笔记/'}[key[0]] + leaf
+            if key[0] == 'reading':
+                book = unicodedata.normalize('NFKC', category['book']).strip()
+                book = re.sub(r'[<>:"/\\|?*\x00-\x1f]', '-', book).strip(' .')
+                if not book:
+                    raise ArchiveError('Book cannot form a folder')
+                folder += '/' + book
             if folder.casefold() in owners and owners[folder.casefold()] != key:
                 folder += '--' + hashlib.sha256(key[1].encode()).hexdigest()[:8]
             validate_path(folder + '/category-check.md')
