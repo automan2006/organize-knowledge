@@ -1,9 +1,13 @@
 ---
 {
   "name": "study-chat-notes",
-  "description": "识别学习聊天、图片和 PDF，区分本学期课堂、课外知识与读书笔记，完整保留课堂和知识，仅阅读聊天可精简，去重后归档 Notion 与 GitHub。"
+  "description": "整理聊天、图片及 PDF，区分课堂、知识与读书笔记，默认将可视化卡片的 HTML、数据和交互逻辑去重归档 Notion 与 GitHub。"
 }
 ---
+
+## 0.2.2 默认归档所有可视化卡片
+
+正式整理必须执行 [可视化卡片默认双端归档](../notion-course-notes/references/visualization-cards.md)：除函数图表，还包括静态 HTML 对比卡、SVG/Canvas 图解和交互面板。默认保存可取得的 HTML、实际数据、CSS/JS 与原交互逻辑到 Notion 和 GitHub，关联到对应知识点；按资源包内容去重，缺源码不以截图冒充。遵守用户限定的目标，只升级插件不归档本聊天。卡片缺失不能因正文重复跳过。
 
 ## 0.2.1 每篇保存后登记主页链接
 

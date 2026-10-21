@@ -62,3 +62,8 @@ python archive_github_notes.py --manifest notes-manifest.json --receipt upload-r
 - **结果不确定**：超时等导致无法确认，保留候选路径待核对，不盲目重传。
 
 只有本次新建与重复跳过项均验证完毕才称“本次去重处理完成”，分别统计新增、跳过与失败；不能把全部跳过说成新建了提交。只报告已选目标，Notion 也被选中时分别检查，不能用一边重复代替另一边存在的证据。生成本地文件、git commit 未 push、调用工具但无成功结果均不代表远端保存。不要声称已同步到用户设备上的 Obsidian。
+
+
+## 0.2.2 可视化卡片默认资产
+
+执行 [卡片默认归档](../../notion-course-notes/references/visualization-cards.md)，静态与交互卡片均默认纳入。除 Markdown 外，实际 HTML、独立数据、样式与交互逻辑作为资源包逐文件保存并按提交回读。复用完整重复包，只补缺失目标；仅有 Markdown/截图不算资源包已存。该规则不扩展 Markdown 辅助脚本可接受的文件类型。
