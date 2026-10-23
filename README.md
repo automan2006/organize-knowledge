@@ -20,13 +20,13 @@ Organize knowledge 是一套可重复使用的 Skills 和插件源码。它从�
 - **保存至 GitHub 私有仓库**：配置自己的仓库后逐篇去重，保留 YAML、公式与 `related_candidates`；重复跳过，有新增的同名文件另取名称，每篇返回真实结果。
 - **按课程和领域归类**：识别每篇笔记内容，优先沿用 Notion 课程，同课笔记放在同一个 GitHub 目录；复用已有领域，新方面自动新建领域分类。
 
-## 三个 Skills
+## 四个 Skills
 
 - `study-chat-notes`：完整流程，一次交付 Notion 与 Obsidian 两种笔记。
 - `notion-course-notes`：只整理并保存 Notion 课程学术笔记。
 - `obsidian-concept-notes`：输出可复制的 Obsidian 概念笔记，可保存至已授权的私有 GitHub，默认由使用者的插件生成双向链接。
 
-这三个 Skill 之间共享参考资源，安装时请保留完整的 `skills/` 目录。
+这四个 Skill 之间共享参考资源，安装时请保留完整的 `skills/` 目录。
 
 正常调用 `study-chat-notes` 默认同时保存 Notion 和已配置的 GitHub 私有仓库，并照常提供可复制的 Obsidian Markdown。只有明确说“只存 Notion”“只传 GitHub”“只导出”或限定知识点时才选择性执行。限定知识点不会自动取消某个保存目标；独立点名另外两个 Skill 则执行其单项功能。
 
@@ -44,7 +44,7 @@ codex plugin marketplace add automan2006/organize-knowledge
 
 然后在支持本地／仓库来源的 ChatGPT 桌面插件界面选择 **Organize knowledge** 来源，安装或启用插件。不同版本的入口和权限可能不同，参见 [OpenAI 官方插件打包与仓库来源说明](https://developers.openai.com/plugins/build/plugins)。安装后开启新对话，让宿主加载新 Skills。
 
-也可下载 [Releases](https://github.com/automan2006/organize-knowledge/releases) 中的插件 ZIP，在支持插件导入的环境中导入；或者让支持 Skills 的代理安装 `plugins/organize-knowledge/skills/` 中的三个 Skill。
+也可下载 [Releases](https://github.com/automan2006/organize-knowledge/releases) 中的插件 ZIP，在支持插件导入的环境中导入；或者让支持 Skills 的代理安装 `plugins/organize-knowledge/skills/` 中的四个 Skill。
 
 ### 第一次使用前
 
@@ -159,3 +159,8 @@ Notion 的 [HTML blocks](https://developers.notion.com/reference/block#html-bloc
 ## 0.2.2：默认保存可视化卡片
 
 正式归档默认包含静态 HTML 卡片、图解及交互面板的源文件、实际数据和交互逻辑，保存到 Notion 与 GitHub 私库。独立文件逐项验证，以整个资源包内容去重；只有截图时明确缺源码，源已保存也不冒称交互或手机运行已实测。
+
+
+## 0.2.3：手写笔记识别
+
+新增 `handwritten-notes-ocr`：利用宿主可用的视觉/OCR 能力识别手写中英文、数字、工程符号、公式和图中标注。保留原图，按页码与区域对应转写，不确定处标“待确认”。只要求识别时不自动外部保存；要求归档时沿用 Notion 与 GitHub 流程。本 Skill 不包含独立 OCR 引擎，真实手写识别质量须结合原图复核。

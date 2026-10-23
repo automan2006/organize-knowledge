@@ -36,7 +36,7 @@ def validate_source():
     assert len(ext['interface']['shortDescription']) <= 30
     assert 'apps' not in ext and 'apps' not in legacy and not (PLUGIN/'.app.json').exists()
     skills = list((PLUGIN/'skills').glob('*/SKILL.md'))
-    assert len(skills) == 3
+    assert {p.parent.name for p in skills} == {'study-chat-notes', 'notion-course-notes', 'obsidian-concept-notes', 'handwritten-notes-ocr'}
     for skill in skills:
         metadata = json.loads(skill.read_text(encoding='utf-8').split('---', 2)[1])
         assert metadata['name'] == skill.parent.name and metadata['description']
@@ -68,7 +68,7 @@ def validate_archive(path):
         names = archive.namelist()
         assert 'organize-knowledge/plugin.json' in names
         assert 'organize-knowledge/LICENSE' in names
-        assert len([name for name in names if name.endswith('/SKILL.md')]) == 3
+        assert {Path(name).parent.name for name in names if name.endswith('/SKILL.md')} == {'study-chat-notes', 'notion-course-notes', 'obsidian-concept-notes', 'handwritten-notes-ocr'}
         for name in names:
             assert name.startswith('organize-knowledge/')
             assert not any(part in {'..', '.git', '__pycache__'} for part in Path(name).parts)
